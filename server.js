@@ -12,7 +12,7 @@ const cors = require('cors');  // CORS 미들웨어 불러오기
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-const socket = new WebSocket('ws://localhost:5000/ws');
+// const socket = new WebSocket('ws://localhost:5000/ws');
 
 const app = express();
 
