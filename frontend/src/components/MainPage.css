@@ -1,0 +1,216 @@
+/* /src/components/MainPage.css */
+
+/* ───────────────────────────────────────────────── */
+/* 1) HTML/Body 기본 리셋 (전역)                   */
+/* ───────────────────────────────────────────────── */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* ───────────────────────────────────────────────── */
+/* 2) 페이지 전체 래퍼                              */
+/* ───────────────────────────────────────────────── */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f6fa;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  position: relative;
+}
+
+/* ───────────────────────────────────────────────── */
+/* 3) 상단 헤더                                     */
+/* ───────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  background-color: #cae7ff;
+  padding: 10px 40px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 윈도우 컨트롤 (⦿⦿⦿) */
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.window-controls .control {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #bbb;
+}
+
+.window-controls .control.yellow {
+  background-color: #fdd835;
+}
+
+.window-controls .control.green {
+  background-color: #43a047;
+}
+
+.window-controls .control.red {
+  background-color: #e53935;
+}
+
+/* 로고 영역 */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2669b5;
+}
+
+/* 우측 네비 버튼들 */
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btn {
+  background-color: #ffffff;
+  color: #2669b5;
+  border: 2px solid #2669b5;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #2669b5;
+  color: #ffffff;
+}
+
+/* ─────────── 중앙 콘텐츠 ─────────── */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.small-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #5d9cec;
+  margin-bottom: 12px;
+}
+
+.main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #111;
+}
+
+/* ─────────── 하단 바 ─────────── */
+.bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cae7ff;
+  width: 100%;
+  max-width: 1200px;
+  padding: 12px 20px;
+  margin-top: 40px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.bar-btn {
+  background-color: #ffffff;
+  color: #2669b5;
+  border: 2px solid #2669b5;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.bar-btn i {
+  font-size: 1rem;
+}
+
+.bar-btn:hover {
+  background-color: #2669b5;
+  color: #ffffff;
+}
+
+/* 구분선 */
+.separator {
+  width: 2px;
+  height: 40px;
+  background-color: #2669b5;
+  margin: 0 8px;
+}
+
+/* 날짜 텍스트 */
+.date {
+  font-size: 0.9rem;
+  color: #2669b5;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* ─────────── 하단 화살표 ─────────── */
+.down-arrow {
+  position: absolute;
+  bottom: 20px;
+  font-size: 2rem;
+  color: #5d9cec;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* ─────────── 반응형 ─────────── */
+@media (max-width: 768px) {
+  .header,
+  .bottom-bar {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .content {
+    margin-top: 20px;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+}

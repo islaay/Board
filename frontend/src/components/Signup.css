@@ -1,0 +1,218 @@
+/* /src/components/Signup.css */
+
+/* ───────────────────────────────────────────────── */
+/* 1) HTML/Body 기본 리셋 (전역)                   */
+/* ───────────────────────────────────────────────── */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* ───────────────────────────────────────────────── */
+/* 2) 페이지 전체 래퍼                              */
+/* ───────────────────────────────────────────────── */
+.signup-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f2f6fa;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* ───────────────────────────────────────────────── */
+/* 3) 상단 헤더 (MainPage와 동일 스타일 재사용)      */
+/* ───────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #cae7ff;
+  padding: 8px 30px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.window-controls .control {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #bbb;
+}
+
+.window-controls .control.yellow {
+  background-color: #fdd835;
+}
+
+.window-controls .control.green {
+  background-color: #43a047;
+}
+
+.window-controls .control.red {
+  background-color: #e53935;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2669b5;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btn {
+  background-color: #ffffff;
+  color: #2669b5;
+  border: 2px solid #2669b5;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #2669b5;
+  color: #ffffff;
+}
+
+/* ───────────────────────────────────────────────── */
+/* 4) 회원가입 컨테이너 → 수직 중앙 정렬                */
+/* ───────────────────────────────────────────────── */
+.signup-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ───────────────────────────────────────────────── */
+/* 5) 회원가입 카드                                    */
+/* ───────────────────────────────────────────────── */
+.signup-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px 32px;
+  box-sizing: border-box;
+}
+
+.signup-title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  color: #2669b5;
+  text-align: center;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.input-group input {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-group input:focus {
+  border-color: #5d9cec;
+}
+
+/* ───────────────────────────────────────────────── */
+/* 6) 회원가입 버튼                                   */
+/* ───────────────────────────────────────────────── */
+.submit-btn {
+  background-color: #2669b5;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background-color: #1f559a;
+  transform: scale(1.02);
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* ───────────────────────────────────────────────── */
+/* 7) 반응형 처리                                    */
+/* ───────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .header {
+    padding: 8px 16px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  .signup-card {
+    padding: 20px;
+    margin: 0 16px;
+  }
+
+  .signup-title {
+    font-size: 1.5rem;
+  }
+
+  .submit-btn {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .input-group input {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+}

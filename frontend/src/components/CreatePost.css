@@ -1,0 +1,185 @@
+/* /src/components/CreatePost.css */
+
+/* 1) 기본 리셋 */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* 2) 페이지 래퍼 */
+.create-post-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f2f6fa;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* 3) 헤더 (다른 페이지와 동일) */
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #cae7ff;
+  padding: 8px 30px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+  z-index: 1;
+}
+.window-controls .control {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 1px solid #bbb;
+}
+.window-controls .yellow { background: #fdd835; }
+.window-controls .green  { background: #43a047; }
+.window-controls .red    { background: #e53935; }
+
+.logo {
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  font-size: 1.5rem; font-weight: bold; color: #2669b5;
+  z-index: 0;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+  z-index: 1;
+}
+.nav-btn {
+  background: #fff;
+  color: #2669b5;
+  border: 2px solid #2669b5;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: .2s;
+}
+.nav-btn:hover {
+  background: #2669b5;
+  color: #fff;
+}
+
+/* 4) 콘텐츠 영역 */
+.content-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* 5) 카드 컨테이너 */
+.card-container {
+  width: 100%;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* 6) 폼 제목 */
+.form-title {
+  margin: 0 0 16px;
+  font-size: 1.6rem;
+  color: #2669b5;
+  text-align: center;
+}
+
+/* 7) 입력 그룹 */
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+.input-group label {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #555;
+}
+.input-group input[type="text"],
+.input-group textarea {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.input-group input[type="text"]:focus,
+.input-group textarea:focus {
+  border-color: #5d9cec;
+}
+.input-group input[type="file"] {
+  font-size: 0.95rem;
+}
+
+/* 선택된 파일명 */
+.file-name {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* 8) 버튼 그룹 */
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+.submit-btn {
+  background: #2669b5;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .2s;
+}
+.submit-btn:hover {
+  background: #1f559a;
+  transform: scale(1.02);
+}
+.delete-btn {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .2s;
+}
+.delete-btn:hover {
+  background: #c82333;
+  transform: scale(1.02);
+}
+
+/* 9) 반응형 처리 */
+@media (max-width: 480px) {
+  .header { padding: 8px 16px; flex-direction: column; gap: 8px; }
+  .logo { position: relative; left: auto; transform: none; margin-bottom: 8px; }
+  .nav-buttons { justify-content: center; }
+  .card-container { padding: 16px; margin: 0 12px; }
+  .form-title { font-size: 1.4rem; }
+  .submit-btn, .delete-btn { padding: 8px 16px; font-size: 0.9rem; }
+  .input-group input[type="text"],
+  .input-group textarea { font-size: 0.95rem; padding: 8px 10px; }
+}

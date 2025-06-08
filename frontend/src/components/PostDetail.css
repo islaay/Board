@@ -1,0 +1,303 @@
+/* /src/components/PostDetail.css */
+
+/* 1) 리셋 */
+html, body {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* 2) 페이지 래퍼 */
+.post-detail-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f2f6fa;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* 3) 헤더 */
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #cae7ff;
+  padding: 8px 30px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 윈도우 컨트롤 */
+.window-controls {
+  display: flex; gap: 8px; z-index: 1;
+}
+.window-controls .control {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 1px solid #bbb;
+}
+.window-controls .yellow { background: #fdd835; }
+.window-controls .green  { background: #43a047; }
+.window-controls .red    { background: #e53935; }
+
+/* 로고 */
+.logo {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  font-size: 1.5rem; font-weight: bold; color: #2669b5;
+  z-index: 0;
+}
+
+/* 네비 버튼 */
+.nav-buttons {
+  display: flex; gap: 12px; z-index: 1;
+}
+.nav-btn {
+  background: #fff; color: #2669b5;
+  border: 2px solid #2669b5; padding: 6px 14px;
+  border-radius: 20px; cursor: pointer;
+  transition: .2s;
+}
+.nav-btn:hover {
+  background: #2669b5; color: #fff;
+}
+
+/* 4) 콘텐츠 영역 */
+.content-area {
+  flex: 1; display: flex; justify-content: center;
+  padding: 24px; background: #f2f6fa;
+}
+
+/* 5) 카드 컨테이너 */
+.card-container {
+  width: 100%; max-width: 800px;
+  background: #fff; border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  padding: 24px; box-sizing: border-box;
+}
+
+/* 6) 게시글 헤더 */
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.detail-title {
+  margin: 0; font-size: 1.8rem;
+  font-weight: 700; color: #2669b5;
+  flex: 1 1 auto;
+}
+.detail-meta {
+  font-size: 0.95rem; color: #555;
+  flex: 0 0 auto;
+}
+.meta-author,
+.meta-date {
+  margin: 0 4px;
+}
+.meta-separator {
+  margin: 0 2px;
+}
+.detail-actions {
+  display: flex; gap: 8px; flex: 0 0 auto;
+}
+.action-icon {
+  width: 20px; height: 20px; border: none;
+  background-repeat: no-repeat; background-size: contain;
+  cursor: pointer; opacity: 0.7; transition: opacity .2s;
+}
+.action-icon:hover {
+  opacity: 1;
+}
+
+/* 구분선 */
+.detail-divider {
+  border: none; border-bottom: 1px solid #dde5ed;
+  margin: 0 0 16px;
+}
+
+/* 7) 본문 */
+.detail-body {
+  font-size: 1rem; line-height: 1.6; color: #444;
+}
+.detail-body p {
+  margin: 0 0 12px;
+}
+
+/* 8) 파일 다운로드 */
+.download-container {
+  margin: 16px 0;
+}
+.download-btn {
+  display: inline-block;
+  padding: 8px 16px; background: #007bff; color: #fff;
+  border-radius: 4px; text-decoration: none; transition: .2s;
+}
+.download-btn:hover {
+  background: #0056b3; transform: scale(1.02);
+}
+
+/* 9) 수정/삭제 버튼 */
+.owner-btn-group {
+  display: flex; gap: 12px; margin-bottom: 24px;
+  justify-content: flex-end; 
+}
+.owner-btn {
+  padding: 6px 12px; font-size: 0.9rem; border: none;
+  border-radius: 6px; cursor: pointer; transition: .2s;
+}
+.delete-btn {
+  background: #0056b3; color: #fff;
+}
+.delete-btn:hover {
+  background: #0056b3; transform: scale(1.02);
+}
+.edit-btn {
+  background: #0056b3; color: #fff;
+}
+.edit-btn:hover {
+  background: #0056b3; transform: scale(1.02);
+}
+
+/* 10) 댓글 입력 구획 */
+.comment-input-area {
+  margin: 32px 0; padding: 16px;
+  background: #f9fafe; border: 1px solid #dde5ed;
+  border-radius: 8px;
+}
+.comment-form {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.comment-textarea {
+  width: 100%; min-height: 100px;
+  padding: 10px 12px; font-size: 1rem;
+  border: 1px solid #ccc; border-radius: 6px;
+  outline: none; transition: border-color .2s;
+}
+.comment-textarea:focus {
+  border-color: #5d9cec;
+}
+.comment-submit-btn {
+  align-self: flex-end;
+  padding: 8px 16px; background: #28a745; color: #fff;
+  border: none; border-radius: 6px; cursor: pointer;
+  transition: .2s;
+}
+.comment-submit-btn:hover {
+  background: #218838; transform: scale(1.02);
+}
+
+/* 11) 댓글 리스트 */
+.comment-list {
+  display: flex; flex-direction: column; gap: 16px;
+}
+.comment-item {
+  background: #f9f9f9; border-radius: 6px;
+  padding: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.comment-content {
+  margin: 0 0 8px; font-size: 1rem; color: #333;
+}
+.comment-owner-btns {
+  display: flex;
+  justify-content: flex-end; gap: 8px;
+}
+.comment-btn {
+  padding: 4px 8px; font-size: 0.85rem; border: none;
+  border-radius: 4px; cursor: pointer; transition: .2s;
+}
+.delete-comment-btn {
+  background: #0056b3; color: #fff;
+}
+.delete-comment-btn:hover {
+  background: #0056b3; transform: scale(1.05);
+}
+.edit-comment-btn {
+  background: #0056b3; color: #fff;
+}
+.edit-comment-btn:hover {
+  background: #0056b3; transform: scale(1.05);
+}
+
+/* 12) 뒤로가기 버튼 */
+.back-btn-container {
+  margin-top: 24px;
+}
+.back-btn {
+  padding: 8px 16px; background: #17a2b8; color: #fff;
+  border: none; border-radius: 6px; cursor: pointer; transition: .2s;
+}
+.back-btn:hover {
+  background: #117a8b; transform: scale(1.02);
+}
+
+/* 13) 로딩 */
+.loading {
+  text-align: center; padding: 40px;
+  font-size: 1.2rem; color: #666;
+}
+
+/* 14) 반응형 */
+@media (max-width: 768px) {
+  .header {
+    padding: 8px 16px; flex-direction: column; gap: 8px;
+  }
+  .logo {
+    position: relative; left: auto; transform: none;
+    margin-bottom: 8px;
+  }
+  .nav-buttons {
+    justify-content: center;
+  }
+  .card-container {
+    padding: 16px; margin: 0 12px;
+  }
+  .detail-title {
+    font-size: 1.5rem;
+  }
+  .detail-body {
+    font-size: 0.95rem;
+  }
+  .download-btn,
+  .delete-btn, .edit-btn,
+  .comment-submit-btn, .back-btn {
+    padding: 8px 12px; font-size: 0.9rem;
+  }
+  .comment-textarea {
+    font-size: 0.95rem; padding: 8px 10px;
+  }
+  .comment-item {
+    padding: 10px;
+  }
+  .comment-btn {
+    padding: 4px 6px; font-size: 0.8rem;
+  }
+}
+
+/* ─────────── 댓글 메타 (작성자 · 시간) ─────────── */
+.comment-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.comment-author {
+  font-weight: 600;
+}
+
+.comment-sep {
+  color: #ccc;
+  margin: 0 2px;
+}
+
+.comment-date {
+  font-style: italic;
+}
